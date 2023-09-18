@@ -42,16 +42,16 @@ export default {
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <div v-if="level.showcase" class="tabs">
                         <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
-                            <span class="type-label-lg">Verification</span>
+                            <span class="type-label-lg">Вериф</span>
                         </button>
                         <button class="tab" :class="{selected: toggledShowcase}" @click="toggledShowcase = true">
-                            <span class="type-label-lg">Showcase</span>
+                            <span class="type-label-lg">Шоукейс</span>
                         </button>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
-                            <div class="type-title-sm">Points when completed</div>
+                            <div class="type-title-sm">Очков за прохождение</div>
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
                         <li>
@@ -60,13 +60,13 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Password</div>
-                            <p>{{ level.password || 'Free to Copy' }}</p>
+                            <p>{{ level.password || 'Можно копировать' }}</p>
                         </li>
                     </ul>
-                    <h2>Records</h2>
-                    <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
-                    <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
-                    <p v-else>This level does not accept new records.</p>
+                    <h2>Рекорды</h2>
+                    <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> или лучше, для записи</p>
+                    <p v-else-if="selected +1 <= 150"><strong>100%</strong> или лучше, для записи</p>
+                    <p v-else>Этот уровень не принимает новые рекорды.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
@@ -103,21 +103,20 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h3> Submission Requirements </h3>
-                    <p> When submitting a record, please ensure that you have the following:</p>
-                    <p> - A complete playthrough of the level from 0-100 with no cuts (if you make cuts in your submitted video, include raw footage that doesn't have them) </p>
-                    <p> - A decent amount of previous attempts (A single death at 1% is not sufficient, try to get somewhat far into the level. Everplay records are exempt from this.) </p>
-                    <p> - End stats (The whole box must appear for at least one frame) </p>
-                    <p> - Cheat Indicator (If you are using a mod menu that supports one, like Megahack v7) </p>
-                    <p> - Fps/tps indicator (For mod menus that support one) </p>
-                    <p> - In-game source audio/Clicks (Either is fine, however both are strongly recommended. If you don't have either in your submission video, attach raw footage that does) </p>
-                    <p> Refer to <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit#gid=0">this sheet</a> for a complete list of allowed mods.</p>
-                    <p> Please also check for the following:</p>
-                    <p> - Make sure you beat the level displayed on the site (for reference, check the level ID to ensure you're playing the correct level</p>
-                    <p> - Do not use secret routes or bug routes</p>
-                    <p> - Do not use easy modes, only a record of the unmodified level qualifies</p>
-                    <p> - Once a level falls onto the Legacy List, we accept records for it for 24 hours after it falls off, then afterwards we never accept records for said level</p>
-                </div>
+                    <h3> Требования для записи </h3>
+                   <p> При отправке записи, убедитесь, что у вас есть следующее: </p>
+<p> - Полное прохождение уровня с 0-100 без вырезов (если вы делаете вырезы в своем видео, включите сырые кадры без них) </p>
+<p> - Значительное количество предыдущих попыток (одна смерть на 1% недостаточна, постарайтесь пройти довольно далеко в уровне. Записи Everplay освобождаются от этого требования.) </p>
+<p> - Статистика завершения (весь экран Level Complete должен появиться) </p>
+<p> - Индикатор читов (если вы используете мод-меню, которое поддерживает его, например, Megahack v7) </p>
+<p> - Индикатор FPS/TPS (для мод-меню, которые его поддерживают) </p>
+<p> - Клики </p>
+<p> Пожалуйста, также проверьте следующее: </p>
+<p> - Убедитесь, что вы прошли уровень, отображенный на сайте (для справки, проверьте идентификатор уровня, чтобы убедиться, что вы играете правильный уровень) </p>
+<p> - Не используйте секретные маршруты или багованные маршруты </p>
+<p> - Не используйте режимы "легко", только запись неизмененного уровня квалифицируется </p>
+<p> - Как только уровень попадает в "Легаси-лист", мы принимаем записи для него в течение 24 часов после его снятия с него, затем после этого мы больше не принимаем записей для данного уровня </p>
+</div>
             </div>
         </main>
     `,
