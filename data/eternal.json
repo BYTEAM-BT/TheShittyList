@@ -7,5 +7,12 @@
     "verification": "",
     "showcase": "",
     "percentToQualify": 47,
-    "records": []
+    "records": [
+                 {
+            "user": "blagoo",
+            "link": "https://youtu.be/zSzu_eldOrQ",
+            "percent": 100,
+            "hz": 288
+        }
+    ]
 }
